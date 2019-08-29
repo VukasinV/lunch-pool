@@ -1,7 +1,8 @@
 .poll {
-    height: 700px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
+  height: 700px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background: #f4cc70;
+  border-radius: 5px;
 }
