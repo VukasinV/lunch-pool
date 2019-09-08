@@ -1,11 +1,11 @@
-import { Action } from "@ngrx/store";
-import { Suggestion } from "src/app/models/suggestion.model";
+import { Action } from '@ngrx/store';
+import { Suggestion } from 'src/app/models/suggestion.model';
 
 // load suggestions
-export const LOAD_SUGGESTIONS = "[Suggestions] Load Suggestions";
-export const LOAD_SUGGESTIONS_FAIL = "[Suggestions] Load Suggestions Fail";
+export const LOAD_SUGGESTIONS = '[Suggestions] Load Suggestions';
+export const LOAD_SUGGESTIONS_FAIL = '[Suggestions] Load Suggestions Fail';
 export const LOAD_SUGGESTIONS_SUCCESS =
-  "[Suggestions] Load Suggestions Success";
+  '[Suggestions] Load Suggestions Success';
 
 export class LoadSuggestions {
   readonly type = LOAD_SUGGESTIONS;
@@ -17,6 +17,12 @@ export class LoadSuggestionsFail {
 }
 
 export class LoadSuggestionsSuccess {
-  readonly type = LOAD_SUGGESTIONS;
+  readonly type = LOAD_SUGGESTIONS_SUCCESS;
   constructor(public payload: Suggestion[]) {}
 }
+
+// Action types
+export type SuggestionsAction =
+  | LoadSuggestions
+  | LoadSuggestionsFail
+  | LoadSuggestionsSuccess;
