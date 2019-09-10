@@ -10,12 +10,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from '@ngrx/store';
 import * as fromSuggestions from './store/reducers/suggestions.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PollComponent } from './poll/poll.component';
 import { SuggestionComponent } from './suggestion/suggestion.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddSuggestionComponent } from './add-suggestion/add-suggestion.component';
+import { SuggestionsService } from './services/suggestions.service';
 
 @NgModule({
   declarations: [
@@ -34,10 +37,13 @@ import { AddSuggestionComponent } from './add-suggestion/add-suggestion.componen
     MatFormFieldModule,
     TextFieldModule,
     MatButtonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({ Suggestions: fromSuggestions.reducer }),
     StoreDevtoolsModule.instrument()
   ],
-  providers: [],
+  providers: [SuggestionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

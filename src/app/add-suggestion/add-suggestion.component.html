@@ -1,16 +1,19 @@
 <mat-card class="add-suggestion">
-  <mat-form-field>
-    <input matInput placeholder="Name" />
-  </mat-form-field>
-  <mat-form-field>
-    <textarea
-      placeholder="Description"
-      matInput
-      cdkTextareaAutosize
-      #autosize="cdkTextareaAutosize"
-      cdkAutosizeMinRows="1"
-      cdkAutosizeMaxRows="5"
-    ></textarea>
-  </mat-form-field>
+  <form [formGroup]="addSuggestion">
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        placeholder="Description"
+        matInput
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5"
+        formControlName="description"
+      ></textarea>
+    </mat-form-field>
+  </form>
   <button mat-raised-button color="primary">Submit</button>
 </mat-card>

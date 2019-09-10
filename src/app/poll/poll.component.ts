@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Suggestion } from '../models/suggestion.model';
+import { SuggestionsService } from '../services/suggestions.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-poll',
@@ -7,22 +9,11 @@ import { Suggestion } from '../models/suggestion.model';
   styleUrls: ['./poll.component.css']
 })
 export class PollComponent implements OnInit {
-  suggestions = [
-    {
-      name: 'Roll bar',
-      description: 'Potaz od pecurki, gulas i banan torta'
-    },
-    {
-      name: 'Zapata',
-      description: 'Neki dorucak'
-    },
-    {
-      name: 'Kasina',
-      description: 'Jelo dana'
-    }
-  ];
+  suggestions$: Observable<Suggestion[]>;
 
-  constructor() {}
+  constructor(private suggestionsService: SuggestionsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.suggestions$ = this.suggestionsService.getSuggestions();
+  }
 }

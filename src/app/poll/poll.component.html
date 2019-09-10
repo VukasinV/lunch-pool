@@ -1,6 +1,6 @@
 <div class="poll">
   <app-suggestion
-    *ngFor="let suggestion of suggestions"
+    *ngFor="let suggestion of suggestions$ | async"
     [suggestion]="suggestion"
   ></app-suggestion>
 </div>
