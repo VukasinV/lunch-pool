@@ -1,7 +1,6 @@
 # LunchPoll
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
-It's created mostly for testing NGRX in mind as well as doing some fun voting on where to go to eat as a team.
+It's created mostly for testing **NGRX** in mind as well as doing some fun voting on where to go to eat as a team.
 
 ## Development server
 
